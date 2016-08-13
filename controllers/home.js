@@ -7,3 +7,9 @@ exports.index = (req, res) => {
     title: 'Home'
   });
 };
+
+exports.phantom = (req, res) => {
+  res.render('phantom', {
+    title: 'Phantom HTML',
+  });
+};
