@@ -51,6 +51,24 @@ gulp.task('serve-dev', function() {
         });
 });
 
+gulp.task('inject', function() {
+    log('Wire up the bower css and our app js into the html');
+    var wiredep = require('wiredep').stream;
+    var inject = require('gulp-inject');
+
+    // var injectSrc = gulp.src(['./public/css/*.css', './public/js/*.js'], {read: false});
+
+    // var injectOptions = {
+    // ignorePath: '/public'
+    // };
+
+    var options = config.getWiredepDefaultOptions();
+    return gulp.src('./views/*.jade')
+        .pipe(wiredep(options))
+        // .pipe(inject(injectSrc, injectOptions))
+        .pipe(gulp.dest('./views/'));
+});
+
 ///////
 function startBrowserSync() {
     if (browserSync.active) {
