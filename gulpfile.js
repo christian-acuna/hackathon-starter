@@ -56,16 +56,16 @@ gulp.task('inject', function() {
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');
 
-    // var injectSrc = gulp.src(['./public/css/*.css', './public/js/*.js'], {read: false});
+    var injectSrc = gulp.src(['./public/css/*.css', './public/js/*.js'], {read: false});
 
-    // var injectOptions = {
-    // ignorePath: '/public'
-    // };
+    var injectOptions = {
+        ignorePath: '/public'
+    };
 
     var options = config.getWiredepDefaultOptions();
     return gulp.src('./views/*.jade')
         .pipe(wiredep(options))
-        // .pipe(inject(injectSrc, injectOptions))
+        .pipe($.inject(injectSrc, injectOptions))
         .pipe(gulp.dest('./views/'));
 });
 

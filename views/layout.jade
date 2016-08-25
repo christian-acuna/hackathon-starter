@@ -11,8 +11,14 @@ html
     link(rel='stylesheet', href='lib/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='lib/font-awesome/css/font-awesome.min.css')
     // endbower
+    
+    //- inject:css
+    link(rel="stylesheet", href="/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/css/ie8.css")
+    link(rel="stylesheet", href="/css/ie9.css")
+    link(rel="stylesheet", href="/css/phantom-main.css")
+    //- endinject
     link(rel='shortcut icon', href='/favicon.png')
-    link(rel='stylesheet', href='/css/main.css')
 
   body
     include partials/header
@@ -27,7 +33,10 @@ html
     script(src='lib/jquery/dist/jquery.js')
     script(src='lib/bootstrap/dist/js/bootstrap.js')
     // endbower
-    
-    //- script(src='/js/lib/jquery-2.2.0.min.js')
-    //- script(src='/js/lib/bootstrap.min.js')
-    //- script(src='/js/main.js')
+    //- inject:js
+    script(src="/js/jquery.min.js")
+    script(src="/js/main.js")
+    script(src="/js/phantom-main.js")
+    script(src="/js/skel.min.js")
+    script(src="/js/util.js")
+    //- endinject
